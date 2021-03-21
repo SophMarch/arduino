@@ -13,16 +13,16 @@
 #include <WiFi101.h>
 
 //For Internet connection
-const char* MY_SSID = SECRET_SSID; /!\ to define in ardunio_secrets.h file
-const char* MY_PASS =  SECRET_PASS; /!\ to define in ardunio_secrets.h file
+const char* MY_SSID = SECRET_SSID; // /!\ to define in ardunio_secrets.h file
+const char* MY_PASS =  SECRET_PASS; // /!\ to define in ardunio_secrets.h file
 int status = WL_IDLE_STATUS;
 
 //For IFTTT
 WiFiClient IftttClient;
 const char* MY_HOST = "maker.ifttt.com";
 int  MY_PORT = 80;
-const char* MY_EVENT = SECRET_EVENT; /!\ to define in ardunio_secrets.h file
-const char* MY_API_KEY = SECRET_API_KEY; /!\ to define in ardunio_secrets.h file
+const char* MY_EVENT = SECRET_EVENT; // /!\ to define in ardunio_secrets.h file
+const char* MY_API_KEY = SECRET_API_KEY; // /!\ to define in ardunio_secrets.h file
 
 //Sensors inputs management
 int lightPin = A0;
@@ -35,7 +35,7 @@ void setup()
 {
   //Initiate serial and wait for port to open:
   Serial.begin(9600);
-  //while(!Serial);
+  while(!Serial); // to comment if you want to power MKR1000 without the computer
   delay(2000);
 
   //Connect to Wifi
