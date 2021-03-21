@@ -1,19 +1,11 @@
 /*
-  Setting up IFTTT with MKR1000
+  Dynamic monitoring with IFTTT, MKR1000 and Google Sheets
 
-  Describe what it does in layman's terms.  Refer to the components
-  attached to the various pins.
+  Connect to WIFI and IFTTT to monitor temperature as well as light sensor inputs.
+  /!\ Adapt the WIFI and IFTTT parameters before uploading to MKR1000 in an ardunio_secrets.h file
 
-  The circuit:
-  * list the components attached to each input
-  * list the components attached to each output
-
-  Created day month year
-  By author's name
-  Modified day month year
-  By author's name
-
-  http://url/of/online/tutorial.cc
+  Created 21/03/2021
+  By Sophie Marchand
 
 */
 
@@ -21,16 +13,16 @@
 #include <WiFi101.h>
 
 //For Internet connection
-const char* MY_SSID = SECRET_SSID;
-const char* MY_PASS =  SECRET_PASS;
+const char* MY_SSID = SECRET_SSID; /!\ to define in ardunio_secrets.h file
+const char* MY_PASS =  SECRET_PASS; /!\ to define in ardunio_secrets.h file
 int status = WL_IDLE_STATUS;
 
 //For IFTTT
 WiFiClient IftttClient;
 const char* MY_HOST = "maker.ifttt.com";
 int  MY_PORT = 80;
-const char* MY_EVENT = SECRET_EVENT;
-const char* MY_API_KEY = SECRET_API_KEY;
+const char* MY_EVENT = SECRET_EVENT; /!\ to define in ardunio_secrets.h file
+const char* MY_API_KEY = SECRET_API_KEY; /!\ to define in ardunio_secrets.h file
 
 //Sensors inputs management
 int lightPin = A0;
